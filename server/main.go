@@ -3,19 +3,17 @@ package main
 import(
 	"net/http"
 	"github.com/go-chi/chi/v5"
+
+	"github.com/wthobika/BarkingMelodies/src"
 )
 
-
+//Where the server starts
 func main(){
 	router := chi.NewRouter()
 
 	//ROUTES
-	router.Get("/", indexHandler)
+	router.Get("/", src.IndexHandler)
 
 	
 	http.ListenAndServe(":8080", router)
-}
-
-func indexHandler(w http.ResponseWriter, r *http.Request){
-	http.ServeFile(w, r, "../static/html/index.html")
 }
