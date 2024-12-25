@@ -13,7 +13,9 @@ func main(){
 
 	//ROUTES
 	router.Get("/", src.IndexHandler)
+	router.Post("/register", src.Register)
+	router.Post("/login", src.Login)
+	router.Post("/logout", src.Logout)
 
-	
 	http.ListenAndServe(":8080", router)
 }
