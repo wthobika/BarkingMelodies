@@ -17,7 +17,5 @@ func main(){
 	router.Post("/login", src.Login)
 	router.Post("/logout", src.Logout)
 
-
-	
 	http.ListenAndServe(":8080", router)
 }
